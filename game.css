@@ -1,0 +1,149 @@
+/* base  */
+.row{
+    justify-content: space-between;
+}
+.half {
+    width: 50%;
+    margin: auto;
+}
+/* end base  */
+
+/* huong dan  */
+
+.support {
+    display: none;
+    position: fixed;
+   width: 40%;
+   background-color: white;
+   border: 1px solid black;
+   top: 20%;
+   left: 30%;
+    z-index: 10;
+}
+.csmm {
+    margin-top: 100px;
+}
+.csmm .cangiua{ 
+    text-align: center;
+}
+.csmm .cangiua .title {
+    font-size: 30px;
+    font-weight: 600;
+}
+.csmm .cangiua .content{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.support.hienhuongdan {
+    display: block;
+}
+.support .canbutton {
+    position: relative;
+    padding: 10px;
+    
+}
+.support .canbutton .p{
+    overflow: auto;
+
+}
+.support .canbutton button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+.support h1 {
+    text-align: center;
+}
+/* end huong dan  */
+
+.header {
+    background-color: orange;
+    
+}
+
+.row .item{
+    padding: 20px;
+    color: white;
+    font-size: 3 rem;
+    font-weight: 600;
+}
+.row .huongdan {
+    cursor: pointer;
+}
+.money{
+    display: flex;
+}
+.money .title {
+    margin-right: 10px;
+}
+.clock .content{
+    text-align: center;
+    font-size: 49px;
+    font-weight: 600;
+}
+.warning.warning-on {
+    display: block;
+    
+}
+.warning {
+    z-index: 999;
+    display: none ;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.warning .banner {
+    font-size: 50px;
+    font-weight: 600;
+}
+/* button */
+.datCuoc {
+    margin-top: 100px;
+}
+.button{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
+    background-color: green;
+    color: white;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+.chan {
+    background-color: blue;
+}
+.le {
+    background-color: red;
+}
+.tai {
+    background-color: yellow;
+}
+.xiu {
+    background-color: green;
+}
+/* end button */
+/* nhap tien cuoc  */
+.datCuoc .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.datCuoc input {
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    outline: none;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* end nhap tien cuoc  */
+

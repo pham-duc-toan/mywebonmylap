@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game may man</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="warning">
+        <div class="container">
+            <div class="banner">
+                Bạn đã hết tiền
+            </div>
+            <div class="detail">
+                Vui lòng load lại trang để chơi lại
+            </div>
+        </div>
+    </div>
+    <div class="support ">
+        <div class="canbutton">
+            <h1>Hướng dẫn</h1>
+            <div class="p">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima totam aperiam impedit porro quia iste
+                rem dolorem eum, nulla beatae blanditiis incidunt esse. Laudantium officiis itaque explicabo ratione
+                dolorem. Cupiditate.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, neque quidem earum fugit tempore quae quos
+                laudantium. Iure sit alias sapiente at, fugit corporis commodi? Unde alias accusamus dolores quisquam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque esse ipsam dolorum! Labore, quisquam
+                dolorum dicta facere ab dolorem inventore. Ex repellendus quisquam at sit nobis incidunt eius culpa
+                nihil.
+            </div>
+
+
+            <button class="button-dong">x</button>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="money item">
+                    <div class="title">Số tiền : </div>
+                    <div id="coin">
+                        100
+                    </div>
+                </div>
+                <div class="huongdan item">Hướng dẫn</div>
+            </div>
+        </div>
+    </header>
+    <div class="clock">
+        <div class="container">
+            <div class="content">0</div>
+        </div>
+    </div>
+    <div class="csmm">
+        <div class="container">
+            <div class="cangiua">
+                
+                    <div class="title">CON SỐ MAY MẮN LƯỢT TRƯỚC</div>
+                    <div class="content">--</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="datCuoc">
+        <div class="container">
+            <div class="title">Vui lòng nhập số tiền muốn cược</div>
+            <input type="number" placeholder="0" max="1000" min="0">
+            <div class="half">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+                        <div class="button chan">Chẵn</div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+                        <div class="button le">Lẻ</div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+                        <div class="button tai">Tài</div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+                        <div class="button xiu">Xỉu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
