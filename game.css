@@ -107,6 +107,8 @@
     margin-top: 100px;
 }
 .button{
+    border: none;
+    width: 100%;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -146,4 +148,47 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 /* end nhap tien cuoc  */
+/* history */
+.history {
+    margin-bottom: 100px;
+}
+.history .title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+table {
+    width: 100%;
+}
+th {
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+}
+/* end history */
+/* footer */
+footer{
+    height: 200px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .mid {
+    height: 100%;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+}
+/*end footer */
 
