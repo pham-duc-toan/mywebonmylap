@@ -24,6 +24,7 @@ huongdan.addEventListener("click",()=>{
     support.classList.add("hienhuongdan")
 })
 chan.addEventListener("click",()=>{
+    // console.log(tienCuoc.attributes);
     if(tienCuoc.value>=0 && coin>=tienCuoc.value){
         tchan += tienCuoc.value;
         coin-=tchan;
