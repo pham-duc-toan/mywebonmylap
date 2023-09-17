@@ -11,7 +11,7 @@ const xiu=document.querySelector(".button.xiu");
 var money=document.querySelector("#coin");
 var tienCuoc = document.querySelector("#tienCuoc");
 var his = document.querySelector(".history tbody");
-var giay=0;
+var giay=60;
 var coin =100;
 var tchan =0;
 var txiu =0;
@@ -121,9 +121,9 @@ setInterval( ()=>{
     
     
     // console.log(Math.floor(Math.random()*100 ));
-    if(giay==60){
+    if(giay==-1){
         loadPage();
     }
     clock.innerHTML=giay;
-    giay+=1;
+    giay-=1;
 },1000);
