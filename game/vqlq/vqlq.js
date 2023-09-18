@@ -31,7 +31,6 @@
         // console.log(`${item.getAttribute("typeTuong")}`);
         if(item.getAttribute("class") == "tuong pick"){
             //lấy array có tướng
-            console.log("picked");
             listPicked.forEach(item => {
                 let tmp = {};
                 tmp.text = `${item}`;
@@ -89,7 +88,6 @@
     listGift.forEach(item => {
         item.percent = 1 / listGift.length;
     })
-    console.log(listGift.length);
 	//=====< Số lượng phần thưởng >=====
 	const size = listGift.length;
 
@@ -136,7 +134,7 @@
 
 		//=====< Gọi hàm lấy phần thưởng >=====
 		const gift = getGift(random);
-
+        console.log(gift);
 		//=====< Số vòng quay: 360 độ = 1 vòng (Góc quay hiện tại) >=====
 		currentRotate += 360 * 10;
 
@@ -160,11 +158,9 @@
 	const getGift = randomNumber => {
 		let currentPercent = 0;
 		let list = [];
-
 		listGift.forEach((item, index) => {
 			//=====< Cộng lần lượt phần trăm trúng của các phần thưởng >=====
 			currentPercent += item.percent;
-
 			//=====< Số ngẫu nhiên nhỏ hơn hoặc bằng phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
 			if (randomNumber <= currentPercent) {
 				list.push({ ...item, index });
@@ -188,6 +184,7 @@
 
 	/********** Sự kiện click button start **********/
 	btnWheel.addEventListener('click', () => {
+        if(listGiftTest.length>0)
 		!isRotating && start();
 	});
 })();
