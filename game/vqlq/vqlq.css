@@ -40,7 +40,9 @@ ul {
 	overflow: hidden;
 	transition: cubic-bezier(0.075, 0.8, 0.2, 1) 1s;
 }
-
+li b {
+	font-weight: normal;
+}
 span {
 	display: inline-block;
 	position: relative;

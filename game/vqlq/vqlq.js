@@ -44,6 +44,9 @@
             //ham load lai page
         }
         else {    
+            listGiftTest.forEach(item => {
+                item.percent = 1 / listGiftTest.length;
+            })
             listGiftTest = listGiftTest.filter(item2 => !listPicked.includes(item2.text));
             loadPage();
         }
@@ -51,21 +54,24 @@
     })
 
 	var listGiftTest = [];
+    var size = listGiftTest.length;
     
+    //=====< Số đo góc của 1 phần thưởng chiếm trên hình tròn >=====
+    var rotate = 360 / size;
+
+    //=====< Số đo góc cần để tạo độ nghiêng, 90 độ trừ đi góc của 1 phần thưởng chiếm >=====
+    var skewY = 90 - rotate;
 
     loadPage();
     function loadPage(){
+        size = listGiftTest.length;
+        rotate = 360 / size;
+        skewY = 90 - rotate;
         listGiftTest.forEach(item => {
             item.percent = 1 / listGiftTest.length;
         })
         //=====< Số lượng phần thưởng >=====
-        const size = listGiftTest.length;
-    
-        //=====< Số đo góc của 1 phần thưởng chiếm trên hình tròn >=====
-        const rotate = 360 / size;
-    
-        //=====< Số đo góc cần để tạo độ nghiêng, 90 độ trừ đi góc của 1 phần thưởng chiếm >=====
-        const skewY = 90 - rotate;
+ 
         console.log(listGiftTest.length);
         if(listGiftTest.length>0)
         listGiftTest.map((item, index) => {
@@ -104,67 +110,72 @@
               }
         }
         	/********** Hàm bắt đầu **********/
-            const start = () => {
-                showMsg.innerHTML = '';
-                isRotating = true;
-                //=====< Lấy 1 số ngầu nhiên 0 -> 1 >=====
-                const random = Math.random();
-
-                //=====< Gọi hàm lấy phần thưởng >=====
-                const gift = getGift(random);
-                console.log(gift);
-                //=====< Số vòng quay: 360 độ = 1 vòng (Góc quay hiện tại) >=====
-                currentRotate += 360 * 10;
-
-                //=====< Gọi hàm quay >=====
-                rotateWheel(currentRotate, gift.index);
-
-                //=====< Gọi hàm in ra màn hình >=====
-                showGift(gift);
-            };
-
-            /********** Hàm quay vòng quay **********/
-            const rotateWheel = (currentRotate, index) => {
-                $('.wheel').style.transform = `rotate(${
-                    //=====< Góc quay hiện tại trừ góc của phần thưởng>=====
-                    //=====< Trừ tiếp cho một nửa góc của 1 phần thưởng để đưa mũi tên về chính giữa >=====
-                    currentRotate - index * rotate - rotate / 2
-                }deg)`;
-            };
-
-            /********** Hàm lấy phần thưởng **********/
-            const getGift = randomNumber => {
-                let currentPercent = 0;
-                let list = [];
-                listGiftTest.forEach((item, index) => {
-                    //=====< Cộng lần lượt phần trăm trúng của các phần thưởng >=====
-                    currentPercent += item.percent;
-                    //=====< Số ngẫu nhiên nhỏ hơn hoặc bằng phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
-                    if (randomNumber <= currentPercent) {
-                        list.push({ ...item, index });
-                    }
-                });
-
-                //=====< Phần thưởng đầu tiên trong danh sách là phần thưởng quay được>=====
-                return list[0];
-            };
-
-            /********** In phần thưởng ra màn hình **********/
-            const showGift = gift => {
-                let timer = setTimeout(() => {
-                    isRotating = false;
-
-                    showMsg.innerHTML = `${gift.text}`;
-
-                    clearTimeout(timer);
-                }, timeRotate);
-            };
-
-            /********** Sự kiện click button start **********/
-            btnWheel.addEventListener('click', () => {
-                if(listGiftTest.length>0)
-                !isRotating && start();
-            });
+            
+            
     }
+    const start = () => {
+        showMsg.innerHTML = '';
+        isRotating = true;
+        //=====< Lấy 1 số ngầu nhiên 0 -> 1 >=====
+        const random = Math.random();
+
+        //=====< Gọi hàm lấy phần thưởng >=====
+        const gift = getGift(random);
+        console.log(gift);
+        //=====< Số vòng quay: 360 độ = 1 vòng (Góc quay hiện tại) >=====
+        currentRotate += 360 * 10;
+        console.log(gift.index);
+
+        console.log("ok");
+
+        //=====< Gọi hàm quay >=====
+        rotateWheel(currentRotate, gift.index);
+
+        //=====< Gọi hàm in ra màn hình >=====
+        showGift(gift);
+    };
+
+    /********** Hàm quay vòng quay **********/
+    const rotateWheel = (currentRotate, index) => {
+        $('.wheel').style.transform = `rotate(${
+            //=====< Góc quay hiện tại trừ góc của phần thưởng>=====
+            //=====< Trừ tiếp cho một nửa góc của 1 phần thưởng để đưa mũi tên về chính giữa >=====
+            currentRotate - index * rotate - rotate / 2
+        }deg)`;
+    };
+
+    /********** Hàm lấy phần thưởng **********/
+    const getGift = randomNumber => {
+        let currentPercent = 0;
+        let list = [];
+        listGiftTest.forEach((item, index) => {
+            //=====< Cộng lần lượt phần trăm trúng của các phần thưởng >=====
+            currentPercent += item.percent;
+            //=====< Số ngẫu nhiên nhỏ hơn hoặc bằng phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
+            if (randomNumber <= currentPercent) {
+                list.push({ ...item, index });
+            }
+        });
+
+        //=====< Phần thưởng đầu tiên trong danh sách là phần thưởng quay được>=====
+        return list[0];
+    };
+
+    /********** In phần thưởng ra màn hình **********/
+    const showGift = gift => {
+        let timer = setTimeout(() => {
+            isRotating = false;
+
+            showMsg.innerHTML = `${gift.text}`;
+
+            clearTimeout(timer);
+        }, timeRotate);
+    };
+
+    /********** Sự kiện click button start **********/
+    btnWheel.addEventListener('click', () => {
+        if(listGiftTest.length>0)
+        !isRotating && start();
+    });
 
 })();
