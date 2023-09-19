@@ -28,7 +28,7 @@
         item.classList.toggle("pick");
         let nameArray = item.getAttribute("typeTuong");
         let listPicked = listTuong[nameArray];
-        // console.log(`${item.getAttribute("typeTuong")}`);
+       
         if(item.getAttribute("class") == "tuong pick"){
             //lấy array có tướng
             listPicked.forEach(item => {
@@ -72,7 +72,7 @@
         })
         //=====< Số lượng phần thưởng >=====
  
-        console.log(listGiftTest.length);
+
         if(listGiftTest.length>0)
         listGiftTest.map((item, index) => {
             //=====< Tạo thẻ li >=====
@@ -84,19 +84,13 @@
             }deg) skewY(-${skewY}deg)`;
     
             //=====< Thêm background-color so le nhau và căn giữa cho các thẻ text>=====
-            if (index % 2 == 0) {
-                elm.innerHTML = `<p style="transform: skewY(${skewY}deg) rotate(${
+            
+                elm.innerHTML = `<div style="transform: skewY(${skewY}deg) rotate(${
                     rotate / 2
-                }deg);" class="text text-1">
-                <b>${item.text}</b>
-            </p>`;
-            } else {
-                elm.innerHTML = `<p style="transform: skewY(${skewY}deg) rotate(${
-                    rotate / 2
-                }deg);" class="text text-2">
-            <b>${item.text}</b>
-            </p>`;
-            }
+                }deg);" class="text text-${index % 3}">
+                <span class="name-hero">${item.text}</span>
+            </div>`;
+            
     
             //=====< Thêm vào thẻ ul >=====
             wheel.appendChild(elm);
@@ -121,12 +115,12 @@
 
         //=====< Gọi hàm lấy phần thưởng >=====
         const gift = getGift(random);
-        console.log(gift);
+     
         //=====< Số vòng quay: 360 độ = 1 vòng (Góc quay hiện tại) >=====
         currentRotate += 360 * 10;
-        console.log(gift.index);
+        
 
-        console.log("ok");
+
 
         //=====< Gọi hàm quay >=====
         rotateWheel(currentRotate, gift.index);
