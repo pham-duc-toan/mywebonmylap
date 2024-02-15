@@ -119,7 +119,7 @@
     listGiftTest.forEach((item) => {
       item.percent = heSoTyLe[item.type] / mau;
     });
-    console.log(listGiftTest);
+    // console.log(listGiftTest);
     /********** Hàm bắt đầu **********/
   }
   const start = () => {
