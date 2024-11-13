@@ -18,11 +18,11 @@
   const tuong = document.querySelectorAll(".tuong");
   //=====< Danh sách phần thưởng >=====
   const stringDauSi =
-    "Lữ Bố, Triệu Vân, Zephys, Ormarr, Maloch, Arthur, Skud, Zuka, Arduin, Ryoma, Astrid, Superman, Wonder Woman, Kil'Groth, Omen, Max, Rourke, Roxie, Amily, Richter, Florentino, Veres, Errol, Yena, Qi, Volkath, Ata, Allain, Dextra, Tachi, Yan, Bijian";
+    "Lữ Bố, Triệu Vân, Zephys, Ormarr, Maloch, Arthur, Skud, Zuka, Arduin, Ryoma, Astrid, Superman, Wonder Woman, Kil'Groth, Omen, Max, Rourke, Roxie, Amily, Richter, Florentino, Veres, Errol, Yena, Qi, Volkath, Ata, Allain, Dextra, Tachi, Yan, Bijian, bidon";
   const stringPhapSu =
     "Veera, Krixi, Mganga, Kahlii, Điêu Thuyền, Azzen'Ka, Aleister, Natalya, Jinna, Ilumia, Preyta, Raz, Lauriel, Ignis, Zill, Tulen, Liliana, The Flash, Marja, D'arcy, Ishar, Dirak, Zata, Lorion, IGGY, Yue, Bonnie";
   const stringTroThu =
-    "Chaugnar, Alice, Helen, Xeniel, TeeMee, Annette, Sephera, Zip, Krizzix, Rouie, Aya, Ming";
+    "Chaugnar, Alice, do le anh, Helen, Xeniel, TeeMee, Annette, Sephera, Zip, Krizzix, Rouie, Aya, Ming";
   const stringDoDon =
     "Thane, Mina, Omega, Gildur, Toro, Taara, Grakk, Lumburr, Cresht, Arum, Baldum, Y'bneth, Wiro";
   const stringSatThu =

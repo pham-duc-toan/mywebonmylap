@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng Quay Tướng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vòng Quay Tướng</h1>
+    <label for="soTuong">Nhập số lượng tướng cần quay:</label>
+    <input type="number" id="soTuong" placeholder="Nhập số" min="1" max="50">
+    <button onclick="quayTuong()">Quay</button>
+
+    <div class="result" id="ketQua"></div>
+
+    <script>
+        const stringDauSi = "Lữ Bố, Triệu Vân, Zephys, Ormarr, Maloch, Arthur, Skud, Zuka, Arduin, Ryoma, Astrid, Superman, Wonder Woman, Kil'Groth, Omen, Max, Rourke, Roxie, Amily, Richter, Florentino, Veres, Errol, Yena, Qi, Volkath, Ata, Allain, Dextra, Tachi, Yan, Bijian, bidon";
+        const stringPhapSu = "Veera, Krixi, Mganga, Kahlii, Điêu Thuyền, Azzen'Ka, Aleister, Natalya, Jinna, Ilumia, Preyta, Raz, Lauriel, Ignis, Zill, Tulen, Liliana, The Flash, Marja, D'arcy, Ishar, Dirak, Zata, Lorion, IGGY, Yue, Bonnie";
+        const stringTroThu = "Chaugnar, Alice, do le anh, Helen, Xeniel, TeeMee, Annette, Sephera, Zip, Krizzix, Rouie, Aya, Ming";
+        const stringDoDon = "Thane, Mina, Omega, Gildur, Toro, Taara, Grakk, Lumburr, Cresht, Arum, Baldum, Y'bneth, Wiro";
+        const stringSatThu = "Butterfly, Nakroth, Ngộ Không, Kriknak, Batman, Airi, Murad, Quillen, Enzo, Keera, Paine, Sinestrea, AOI";
+        const stringXathu = "Valhein, Violet, Yorn, Fennik, Slimz, Joker, Tel'Annas, Moren, Lindis, Wisp, Elsu, Hayate, Capheny, Celica, Eland'orr, Laville, Thorne, Bright, Terri, Erin";
+
+        // Tạo danh sách các tướng từ các chuỗi
+        const danhSachTuong = (
+          stringTroThu + ", " 
+        + stringDoDon + ", " 
+        + stringSatThu + ", " 
+        + stringPhapSu + ", " 
+        + stringXathu + ", " 
+        + stringDauSi + ", " 
+        + stringPhapSu + ", " 
+        + stringSatThu + ", " 
+        + stringXathu + ", " 
+        + stringDauSi + ", " 
+        + stringTroThu + ", " 
+        + stringDoDon
+      ).split(", ");
+
+        function quayTuong() {
+            const soTuong = parseInt(document.getElementById("soTuong").value);
+            const ketQuaDiv = document.getElementById("ketQua");
+            ketQuaDiv.innerHTML = "";
+
+            if (isNaN(soTuong) || soTuong < 1 || soTuong > danhSachTuong.length) {
+                ketQuaDiv.innerHTML = "<p>Vui lòng nhập số hợp lệ trong khoảng từ 1 đến " + danhSachTuong.length + ".</p>";
+                return;
+            }
+
+            // Sử dụng Set để lưu các tướng ngẫu nhiên không trùng
+            const ketQua = new Set();
+
+            while (ketQua.size < soTuong) {
+                const randomIndex = Math.floor(Math.random() * danhSachTuong.length);
+                ketQua.add(danhSachTuong[randomIndex]);
+            }
+
+            // Hiển thị kết quả
+            ketQuaDiv.innerHTML = "<p>Kết quả quay tướng:</p><ul>" + Array.from(ketQua).map(tuong => `<li>${tuong}</li>`).join('') + "</ul>";
+        }
+    </script>
+</body>
+</html>
